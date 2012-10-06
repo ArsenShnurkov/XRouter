@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.Tests.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2012-10-06" time="11:01:51">
+  <environment nunit-version="2.5.10.11092" clr-version="2.0.50727.5456" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Program Files\NUnit 2.5.10\bin\net-2.0" machine-name="VIJAY-PC" user="Vijay" user-domain="Vijay-PC" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.Tests.dll" executed="True" result="Failure" success="False" time="0.084" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="TrafficPolice" executed="True" result="Failure" success="False" time="0.078" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Tests" executed="True" result="Failure" success="False" time="0.078" asserts="0">
+            <results>
+              <test-suite type="TestFixture" name="RouteAdapterTests" executed="True" result="Failure" success="False" time="0.077" asserts="0">
+                <results>
+                  <test-case name="TrafficPolice.Tests.RouteAdapterTests.RouteItem_Parameters_Test" executed="True" result="Error" success="False" time="0.069" asserts="0">
+                    <failure>
+                      <message><![CDATA[System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+                      <stack-trace><![CDATA[at TrafficPolice.Tests.RouteAdapterTests.RouteItem_Parameters_Test() in e:\2012\TrafficPolice\TrafficPolice.Tests\RouteAdapterTests.cs:line 114
+]]></stack-trace>
+                    </failure>
+                  </test-case>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

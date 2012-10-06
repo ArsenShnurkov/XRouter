@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1009]E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.Tests.dll</TopNode>
+  <SelectedNode>[0-1008]TrafficPolice.Tests.XRouteSourceTests.Route_Areas_Folder_Test</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1009]E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1010]TrafficPolice" Expanded="true" />
+    <Node UniqueName="[0-1011]TrafficPolice.Tests" Expanded="true" />
+    <Node UniqueName="[0-1000]TrafficPolice.Tests.XRouteSourceTests" Expanded="true" />
+  </Nodes>
+</VisualState>

@@ -1,0 +1,4 @@
+E:\2012\TrafficPolice\TrafficPolice\bin\Debug\TrafficPolice.dll
+E:\2012\TrafficPolice\TrafficPolice\bin\Debug\TrafficPolice.pdb
+E:\2012\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.dll
+E:\2012\TrafficPolice\TrafficPolice\obj\Debug\TrafficPolice.pdb

@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+This is <b>Index</b> view.
+</p>
+
+<p>
+<u>Links:</u> <br/>
+@Html.ActionLink("Action with datetime", "Article", new { datetime = "2012-01-01"}) <br />
+@Html.ActionLink("Action that takes three parameters", "Parameters", new { a = 1 }) <br />
+@Html.ActionLink("Action that accepts only POST request", "OnlyPost")
+</p>
+
+

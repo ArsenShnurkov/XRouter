@@ -1,0 +1,9 @@
+E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.Tests.dll
+E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.Tests.pdb
+E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\nunit.framework.dll
+E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.dll
+E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\TrafficPolice.pdb
+E:\2012\TrafficPolice\TrafficPolice.Tests\bin\Debug\nunit.framework.xml
+E:\2012\TrafficPolice\TrafficPolice.Tests\obj\Debug\TrafficPolice.Tests.csprojResolveAssemblyReference.cache
+E:\2012\TrafficPolice\TrafficPolice.Tests\obj\Debug\TrafficPolice.Tests.dll
+E:\2012\TrafficPolice\TrafficPolice.Tests\obj\Debug\TrafficPolice.Tests.pdb
