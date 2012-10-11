@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRouter", "src\XRouter\XRouter.csproj", "{98E44B56-1829-4A0A-885D-E08599A26E31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRouter.Tests", "test\XRouter.Tests\XRouter.Tests.csproj", "{BF333622-52B0-4687-B28D-8381A1C22C8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XRouter.Mvc", "demo\XRouter.Mvc\XRouter.Mvc.csproj", "{33152A73-F11C-4C2B-9D3F-923CB8DD41C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98E44B56-1829-4A0A-885D-E08599A26E31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98E44B56-1829-4A0A-885D-E08599A26E31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98E44B56-1829-4A0A-885D-E08599A26E31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98E44B56-1829-4A0A-885D-E08599A26E31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF333622-52B0-4687-B28D-8381A1C22C8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF333622-52B0-4687-B28D-8381A1C22C8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF333622-52B0-4687-B28D-8381A1C22C8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF333622-52B0-4687-B28D-8381A1C22C8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33152A73-F11C-4C2B-9D3F-923CB8DD41C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33152A73-F11C-4C2B-9D3F-923CB8DD41C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33152A73-F11C-4C2B-9D3F-923CB8DD41C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33152A73-F11C-4C2B-9D3F-923CB8DD41C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

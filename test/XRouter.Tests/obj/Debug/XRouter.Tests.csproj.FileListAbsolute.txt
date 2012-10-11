@@ -1,0 +1,9 @@
+E:\open-sources\XRouter\test\XRouter.Tests\bin\Debug\XRouter.Tests.dll
+E:\open-sources\XRouter\test\XRouter.Tests\bin\Debug\XRouter.Tests.pdb
+E:\open-sources\XRouter\test\XRouter.Tests\bin\Debug\nunit.framework.dll
+E:\open-sources\XRouter\test\XRouter.Tests\bin\Debug\XRouter.dll
+E:\open-sources\XRouter\test\XRouter.Tests\bin\Debug\XRouter.pdb
+E:\open-sources\XRouter\test\XRouter.Tests\bin\Debug\nunit.framework.xml
+E:\open-sources\XRouter\test\XRouter.Tests\obj\Debug\XRouter.Tests.csprojResolveAssemblyReference.cache
+E:\open-sources\XRouter\test\XRouter.Tests\obj\Debug\XRouter.Tests.dll
+E:\open-sources\XRouter\test\XRouter.Tests\obj\Debug\XRouter.Tests.pdb
