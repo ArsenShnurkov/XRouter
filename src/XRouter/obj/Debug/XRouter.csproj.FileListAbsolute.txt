@@ -2,3 +2,8 @@ E:\open-sources\XRouter\src\XRouter\bin\Debug\XRouter.dll
 E:\open-sources\XRouter\src\XRouter\bin\Debug\XRouter.pdb
 E:\open-sources\XRouter\src\XRouter\obj\Debug\XRouter.dll
 E:\open-sources\XRouter\src\XRouter\obj\Debug\XRouter.pdb
+C:\Users\Vijay\Documents\GitHub\XRouter\src\XRouter\bin\Debug\XRouter.dll
+C:\Users\Vijay\Documents\GitHub\XRouter\src\XRouter\bin\Debug\XRouter.pdb
+C:\Users\Vijay\Documents\GitHub\XRouter\src\XRouter\obj\Debug\XRouter.dll
+C:\Users\Vijay\Documents\GitHub\XRouter\src\XRouter\obj\Debug\XRouter.pdb
+C:\Users\Vijay\Documents\GitHub\XRouter\src\XRouter\obj\Debug\XRouter.csprojResolveAssemblyReference.cache

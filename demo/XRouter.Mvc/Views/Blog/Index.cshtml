@@ -9,11 +9,15 @@ This is <b>Index</b> view.
 </p>
 
 <p>
-<u>Links:</u> <br/>
-@Html.ActionLink("home", "index") <br />
-@Html.ActionLink("Action with datetime", "Article", new { dt = "2012-01-01"}) <br />
-@Html.ActionLink("Action that takes three parameters", "Parameters", new { a = 1 }) <br />
-@Html.ActionLink("Action that accepts only POST request", "OnlyPost")
+<u>Links:</u> <br/><br />
+@Html.ActionLink("Sample action", "sample", new { id = 23 }) <br /><br />
+@Html.ActionLink("Action takes datetime as parameter", "Article", new { dt = "2012-01-01"}) <br /><br />
+@Html.ActionLink("Action that takes three parameters and two are optional", "Parameters", new { a = 1 }) <br /><br />
+@Html.ActionLink("Action that accepts only POST request", "OnlyPost")<br /><br />
+@Html.ActionLink("Contact area's index action", "index", "contact", new { area = "Contact" }, null) <br /><br />
+@Html.ActionLink("Support area's index action", "index", "support", new { area = "Support" }, null) <br /><br />
+@Html.ActionLink("Redirect test", "oldaction", new { id = 12 }) <br /><br />
+@Html.ActionLink("Ignore Test", "ssdfsdf", new { id = 12 })
 </p>
 
 

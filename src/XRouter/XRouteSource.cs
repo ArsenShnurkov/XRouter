@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Hosting;
 using System.Xml.Linq;
 #endregion
@@ -48,8 +47,8 @@ namespace XRouter
     {
       var routeItems = new List<RouteItem>();
 
-      AddRouteItemsFromRoot(routeItems);
       AddRouteItemsFromAreas(routeItems);
+      AddRouteItemsFromRoot(routeItems);
 
       return routeItems;
     }
@@ -119,13 +118,26 @@ namespace XRouter
 
           Ignore = e.Name.ToString().Equals("ignore"),
 
-          HttpMethods = !String.IsNullOrEmpty(GetAttributeVal(e, "method"))
+          Redirect = e.Name.ToString().Equals("redirect")
+        };
+
+        if (routeItem.Redirect)
+        {
+          routeItem.RedirectParams = new RedirectParams
+          {
+            RedirectTo = GetAttributeVal(e, "to"),
+            IsPermanent = !String.IsNullOrEmpty(GetAttributeVal(e, "permanent")) ? bool.Parse(GetAttributeVal(e, "permanent")) : true
+          };
+        }
+        else
+        {
+          routeItem.HttpMethods = !String.IsNullOrEmpty(GetAttributeVal(e, "method"))
             ? GetAttributeVal(e, "method").Split(',')
-            : null,
+            : null;
 
-          Constraint = GetAttributeVal(e, "constraint"),
+          routeItem.Constraint = GetAttributeVal(e, "constraint");
 
-          Constraints = e.Element("constraints") != null
+          routeItem.Constraints = e.Element("constraints") != null
             ? e.Element("constraints").Elements("constraint").Select(c => new RouteConstraint
               {
                 Name = GetAttributeVal(c, "name"),
@@ -134,10 +146,10 @@ namespace XRouter
                   ? bool.Parse(GetAttributeVal(c, "disabled"))
                   : false,
               }).ToArray()
-            : null
+            : null;
         };
 
-        if (!routeItem.Ignore)
+        if (!routeItem.Ignore && !routeItem.Redirect)
         {
           routeItem.Controller = GetAttributeVal(e, "controller");
 

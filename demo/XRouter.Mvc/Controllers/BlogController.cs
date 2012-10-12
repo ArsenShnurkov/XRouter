@@ -10,9 +10,14 @@ namespace XRouter.Mvc.Controllers
       return View();
     }
 
-    public ActionResult Article(string dt)
+    public ActionResult Sample(int id)
     {
-      return View((object)dt);
+      return View();
+    }
+
+    public ActionResult Article(DateTime dt)
+    {
+      return View(dt);
     }
 
     public ActionResult Parameters(int a, int b, int c)
@@ -29,14 +34,19 @@ namespace XRouter.Mvc.Controllers
       return View();
     }
 
-    public ActionResult OldAction(string arg)
+    public ActionResult OldAction(int id)
     {
-      return View((object)arg);
+      return View();
     }
 
-    public ActionResult NewAction(string arg)
+    public ActionResult NewAction(int id)
     {
-      return View((object)arg);
+      return View();
+    }
+
+    public ActionResult Banned(int id)
+    {
+      return View();
     }
   }
 }

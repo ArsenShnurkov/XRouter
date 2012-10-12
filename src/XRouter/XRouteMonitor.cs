@@ -7,7 +7,10 @@ using System.Web.Routing;
 
 namespace XRouter
 {
-  public class XRouteMonitor: IRouteMonitor, IDisposable
+  /// <summary>
+  /// Monitor the route files for any changes and call the update routes method.
+  /// </summary>
+  public class XRouteMonitor : IRouteMonitor, IDisposable
   {
     private FileSystemWatcher _watcher;
     private readonly string _routeConfigFileName;
@@ -25,13 +28,18 @@ namespace XRouter
       _watcher = new FileSystemWatcher(HostingEnvironment.MapPath("~/"), _routeConfigFileName);
       _watcher.IncludeSubdirectories = true;
       _watcher.EnableRaisingEvents = true;
-      _watcher.NotifyFilter = NotifyFilters.LastWrite | NotifyFilters.FileName;
-      _watcher.Changed += delegate(object sender, FileSystemEventArgs e)
+      _watcher.NotifyFilter = NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.FileName | NotifyFilters.DirectoryName;
+
+      Action a = () =>
       {
         _watcher.EnableRaisingEvents = false;
         action(RouteTable.Routes, routeSource.GetRouteItems());
         _watcher.EnableRaisingEvents = true;
       };
+
+      _watcher.Deleted += delegate(object sender, FileSystemEventArgs e) { a(); };
+      _watcher.Changed += delegate(object sender, FileSystemEventArgs e) { a(); };
+      _watcher.Renamed += delegate(object sender, RenamedEventArgs e) { a(); };
     }
 
     public void Dispose()

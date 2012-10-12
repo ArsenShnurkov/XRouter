@@ -46,6 +46,18 @@ namespace XRouter
     { get; set; }
 
     /// <summary>
+    /// True to redirect the request if matches the pattern to the one specified in the RedirectParams.
+    /// </summary>
+    public bool Redirect
+    { get; set; }
+
+    /// <summary>
+    /// Contains the details of the redirection.
+    /// </summary>
+    public RedirectParams RedirectParams
+    { get; set; }
+
+    /// <summary>
     /// True to handle the request even there is a matching file exists.
     /// </summary>
     public bool RouteExistingFiles

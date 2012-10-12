@@ -163,13 +163,18 @@
     <Content Include="Areas\Contact\routes.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Support\routes.config" />
+    <Content Include="Areas\Support\routes.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Blog\OldAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Blog\NewAction.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Blog\Sample.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

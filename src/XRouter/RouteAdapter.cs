@@ -10,17 +10,21 @@ using System.Web.Routing;
 
 namespace XRouter
 {
-  public class RouteAdapter : RouteBase
+  /// <summary>
+  /// This is an adapter used to convert RouteItem into a Route.
+  /// </summary>
+  public class RouteAdapter : Route
   {
     private readonly RouteItem _routeItem;
-    private readonly RouteBase _route;
+    private readonly Route _route;
 
-    public RouteBase Route
+    public Route Route
     {
       get { return _route; }
     }
 
     public RouteAdapter(RouteItem routeItem)
+      : base(routeItem.Pattern, new MvcRouteHandler())
     {
       if (routeItem == null) throw new ArgumentNullException("routeItem");
 
@@ -29,6 +33,10 @@ namespace XRouter
       if (_routeItem.Ignore)
       {
         _route = new IgnoreRoute(routeItem.Pattern) { Constraints = GetConstraints(routeItem) };
+      }
+      else if (_routeItem.Redirect)
+      {
+        _route = new RedirectRoute(routeItem.Pattern, _routeItem.RedirectParams);
       }
       else
       {
@@ -40,25 +48,28 @@ namespace XRouter
           RouteExistingFiles = routeItem.RouteExistingFiles
         };
 
-        if(routeItem.Namespaces != null && routeItem.Namespaces.Length > 0)
-          route.DataTokens["Namespaces"] = routeItem.Namespaces;        
-        else if(routeItem.Area != null && routeItem.Area.Namespaces != null && routeItem.Area.Namespaces.Length > 0)
+        if (routeItem.Namespaces != null && routeItem.Namespaces.Length > 0)
+          route.DataTokens["Namespaces"] = routeItem.Namespaces;
+        else if (routeItem.Area != null && routeItem.Area.Namespaces != null && routeItem.Area.Namespaces.Length > 0)
           route.DataTokens["Namespaces"] = routeItem.Area.Namespaces;
 
         if (routeItem.Area != null)
         {
           route.DataTokens["area"] = routeItem.Area.Name;
 
-          var namespaces = (routeItem.Namespaces == null && routeItem.Area.Namespaces != null) 
-            ? routeItem.Area.Namespaces 
+          var namespaces = (routeItem.Namespaces == null && routeItem.Area.Namespaces != null)
+            ? routeItem.Area.Namespaces
             : routeItem.Namespaces;
 
-          // disabling the namespace lookup fallback mechanism keeps this areas from accidentally picking up
-          // controllers belonging to other areas
           route.DataTokens["UseNamespaceFallback"] = (namespaces == null || namespaces.Length == 0);
         }
 
         _route = route;
+
+        Url = _route.Url;
+        DataTokens = _route.DataTokens;
+        Constraints = _route.Constraints;
+        Defaults = _route.Defaults;
       }
     }
 
