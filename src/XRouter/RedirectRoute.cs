@@ -10,6 +10,11 @@ namespace XRouter
       : base(pattern, new RedirectRouteHandler(redirectParams))
     {
     }
+
+    public override VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values)
+    {
+      return null;
+    }
   }
 
   public class RedirectRouteHandler : IRouteHandler
