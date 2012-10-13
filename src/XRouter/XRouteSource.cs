@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Hosting;
+using System.Xml;
 using System.Xml.Linq;
 #endregion
 
@@ -57,22 +58,26 @@ namespace XRouter
     {
       if (File.Exists(Path.Combine(DirectoryPath, _routeConfigFileName)))
       {
-        var rootConfigElement = XElement.Load(Path.Combine(DirectoryPath, _routeConfigFileName));
-
-        if (rootConfigElement.Name.ToString().Equals("areas"))
+        try
         {
-          foreach (var area in rootConfigElement.Elements("area"))
+          var rootConfigElement = XElement.Load(Path.Combine(DirectoryPath, _routeConfigFileName));
+
+          if (rootConfigElement.Name.ToString().Equals("areas"))
           {
-            if(!String.IsNullOrEmpty(GetAttributeVal(area, "name")))
-              routeItems.AddRange(GetRouteItems(area, true));
-            else
-              routeItems.AddRange(GetRouteItems(area.Element("routes")));
+            foreach (var area in rootConfigElement.Elements("area"))
+            {
+              if (!String.IsNullOrEmpty(GetAttributeVal(area, "name")))
+                routeItems.AddRange(GetRouteItems(area, true));
+              else
+                routeItems.AddRange(GetRouteItems(area.Element("routes")));
+            }
+          }
+          else
+          {
+            routeItems.AddRange(GetRouteItems(rootConfigElement));
           }
         }
-        else
-        {
-          routeItems.AddRange(GetRouteItems(rootConfigElement));
-        }
+        catch (XmlException) { }
       }
     }
 
@@ -82,8 +87,12 @@ namespace XRouter
       {
         foreach (var routeConfigFile in Directory.GetFiles(Path.Combine(DirectoryPath, "Areas"), _routeConfigFileName, SearchOption.AllDirectories))
         {
-          var areaConfigElement = XElement.Load(routeConfigFile);
-          routeItems.AddRange(GetRouteItems(areaConfigElement, true));
+          try
+          {
+            var areaConfigElement = XElement.Load(routeConfigFile);
+            routeItems.AddRange(GetRouteItems(areaConfigElement, true));
+          }
+          catch (XmlException) { }
         }
       }
     }

@@ -32,11 +32,16 @@ namespace XRouter
 
       Action a = () =>
       {
-        _watcher.EnableRaisingEvents = false;
-        action(RouteTable.Routes, routeSource.GetRouteItems());
-        _watcher.EnableRaisingEvents = true;
+        try
+        {
+          _watcher.EnableRaisingEvents = false;
+          action(RouteTable.Routes, routeSource.GetRouteItems());
+          _watcher.EnableRaisingEvents = true;
+        }
+        catch { } // we don't want to put the server down if some exception happens. we have to do some logging here.
       };
 
+      _watcher.Created += delegate(object sender, FileSystemEventArgs e) { a(); };
       _watcher.Deleted += delegate(object sender, FileSystemEventArgs e) { a(); };
       _watcher.Changed += delegate(object sender, FileSystemEventArgs e) { a(); };
       _watcher.Renamed += delegate(object sender, RenamedEventArgs e) { a(); };

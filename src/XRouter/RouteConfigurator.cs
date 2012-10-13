@@ -49,19 +49,15 @@ namespace XRouter
 
     private static void Register(RouteCollection routes, IEnumerable<RouteItem> routeItems)
     {
-      try
+      using (var @lock = routes.GetWriteLock())
       {
-        using (var @lock = routes.GetWriteLock())
-        {
-          routes.Clear();
+        routes.Clear();
 
-          foreach (var routeItem in routeItems.Where(r => !r.Disabled))
-          {
-            routes.Add(routeItem.Name, new RouteAdapter(routeItem));
-          }
+        foreach (var routeItem in routeItems.Where(r => !r.Disabled))
+        {
+          routes.Add(routeItem.Name, new RouteAdapter(routeItem));
         }
       }
-      catch { }
     }
   }
 }
